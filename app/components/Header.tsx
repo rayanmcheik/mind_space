@@ -17,11 +17,15 @@ const Header = () => {
       <div className="container flex items-center justify-between px-4 mx-auto max-w-[1200px] pt-4 pb-4">
         <div className="flex items-center ">
           <Link href="/">
-            <img src="logo.png" alt="Logo" className="w-auto h-12" />
+            <div className="rounded-[100%] border-2 border-white justify-center items-center h-auto px-5 py-5">
+              <h1 className="text-white text-xl w-full text-center">
+              <p>  mind</p> Space
+              </h1>
+            </div>
           </Link>
         </div>
 
-       
+
         <div className="items-center hidden space-x-6 md:flex text-gray-300">
           <Link href="/about" className={linkClass('/about')}>About us</Link>
           <Link href="/" className={linkClass('/ourwork')}>Our work</Link>
@@ -36,7 +40,7 @@ const Header = () => {
         >
           <span className="block w-7 h-0.5 bg-white"></span>
           <span className="block w-7 h-0.5 bg-white"></span>
-          
+
         </button>
       </div>
 
