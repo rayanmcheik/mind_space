@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import LanguageSwitcher from "./languageSwitcher";
@@ -8,73 +8,120 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  const linkClass = (path: string) =>
-    pathname === path
-      ? 'text-white font-bold transition'
-      : 'text-gray-300 hover:text-white transition';
+
+ useEffect(() => {
+  document.body.style.overflow = menuOpen ? "hidden" : "auto";
+
+  return () => {
+    document.body.style.overflow = "auto";
+  };
 
 
-  const navLinkClasses =
+}, [menuOpen]);
+
+
+const linkClass = (path: string) => {
+  const isActive = pathname === path;
+
+  return `
+    relative 
+    transition 
+    pb-1
+    ${isActive ? "text-white font-bold" : "text-gray-300 hover:text-white"}
+
+    before:absolute 
+    before:bottom-0
+    before:left-1/2 
+    before:-translate-x-1/2
+    before:w-full 
+    before:h-[3px] 
+    before:bg-blue-500 
+    before:rounded 
+    before:transition-transform 
+    before:duration-300
+    before:origin-center
+    ${isActive ? "before:scale-x-100" : "before:scale-x-0 hover:before:scale-x-100"}
+  `;
+};
+
+
+const navLinkClasses =
     "relative text-gray-300 hover:text-white before:absolute before:top-6 before:rounded-lg before:left-1/4 before:w-1/2 before:h-1 before:bg-blue-500 before:scale-x-0 hover:before:scale-x-100 before:origin-center before:transition-transform before:duration-300";
 
+  const menuItems = [
+    { name: "About us", path: "/about" },
+    { name: "Our work", path: "/ourwork" },
+    { name: "Our clients", path: "/ourclient" },
+    { name: "Our team", path: "/ourteam" },
+  ];
 
   return (
-    <nav className="w-full pt-1 pb-1 bg-black shadow-md">
-      <div className="container flex items-center justify-between px-4 mx-auto max-w-[1200px] pt-4 pb-4">
-        <div className="flex items-center ">
-          <Link href="/">
-            <div className="rounded-[100%] border-2 border-white justify-center items-center h-auto px-5 py-5">
-              <h1 className="text-white text-xl w-full text-center">
-                <p>  mind</p> Space
-              </h1>
-            </div>
-          </Link>
-        </div>
+    <nav className="w-full bg-black shadow-md relative border-b-2 border-blue-500 md:border-b-0">
+      <div className="container mx-auto max-w-[1200px] px-4 py-4 flex items-center justify-between">
 
+        <Link href="/">
+          <div className="rounded-full border-2 border-white flex justify-center items-center h-auto px-5 py-5">
+            <h1 className="text-white text-xl text-center">
+              <p>mind</p> Space
+            </h1>
+          </div>
+        </Link>
 
-
-        <ul className="items-center hidden space-x-6 md:flex text-gray-300">
-          <li>
-            <Link href="/about" className={navLinkClasses}>About us</Link>
-          </li>
-          <li>
-            <Link href="/ourwork" className={navLinkClasses}>Our work</Link>
-          </li>
-          <li>
-            <Link href="/ourclient" className={navLinkClasses}>Our clients</Link>
-          </li>
-          <li>
-            <Link href="/ourteam" className={navLinkClasses}>Our team</Link>
-          </li>
+        <ul className="hidden md:flex items-center space-x-6">
+          {menuItems.map((item) => (
+            <li key={item.path}>
+              <Link href={item.path} className={navLinkClasses}>
+                {item.name}
+              </Link>
+            </li>
+          ))}
           <li>
             <LanguageSwitcher />
           </li>
         </ul>
 
-
+        
         <button
-          className="flex flex-col gap-1 md:hidden"
+          className="md:hidden flex flex-col relative w-10 h-10 justify-center"
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          <span className="block w-7 h-0.5 bg-white"></span>
-          <span className="block w-7 h-0.5 bg-white"></span>
+          <span
+            className={`block h-1 bg-white rounded-lg transition-all duration-300 ${
+              menuOpen ? "rotate-45 translate-y-0.5 w-full mb-0" : "w-10 mb-1"
+            }`}
+          ></span>
 
+          <span
+            className={`block h-1 bg-white rounded-lg transition-all duration-300 ${
+              menuOpen ? "-rotate-45 -translate-y-0.5 w-full mb-0" : "w-6 mb-0"
+            }`}
+          ></span>
         </button>
       </div>
 
-      {menuOpen && (
-        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-8 bg-black bg-opacity-95">
-          <Link href="/" className={linkClass('/')} onClick={() => setMenuOpen(false)}>Home</Link>
-          <Link href="/about" className={linkClass('/about')} onClick={() => setMenuOpen(false)}>About</Link>
-          <Link href="/contact" className={linkClass('/contact')} onClick={() => setMenuOpen(false)}>Contact</Link>
-          <button
-            onClick={() => setMenuOpen(false)}
-            className="absolute text-3xl text-white top-6 right-6"
-          >
-            ✕
-          </button>
-        </div>
-      )}
+      <div
+        className={`md:hidden fixed left-0 w-full bg-black  overflow-auto transition-all duration-300 ease-in-out ${
+          menuOpen ? "h-[73vh] py-4 border-b-2 border-blue-500" : "h-0 py-0 "
+        }`}
+        style={{ zIndex: 999 }}
+      >
+        <ul className="flex flex-col items-center gap-7 text-4xl px-2">
+          {menuItems.map((item) => (
+            <li key={item.path}>
+              <Link
+                href={item.path}
+                className={linkClass(item.path)}
+                onClick={() => setMenuOpen(false)}
+              >
+                {item.name}
+              </Link>
+            </li>
+          ))}
+          <li>
+            <LanguageSwitcher />
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 };
