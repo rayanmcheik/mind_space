@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import LanguageSwitcher from "./languageSwitcher";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,6 +13,11 @@ const Header = () => {
       ? 'text-white font-bold transition'
       : 'text-gray-300 hover:text-white transition';
 
+
+  const navLinkClasses =
+    "relative text-gray-300 hover:text-white before:absolute before:top-6 before:rounded-lg before:left-1/4 before:w-1/2 before:h-1 before:bg-blue-500 before:scale-x-0 hover:before:scale-x-100 before:origin-center before:transition-transform before:duration-300";
+
+
   return (
     <nav className="w-full pt-1 pb-1 bg-black shadow-md">
       <div className="container flex items-center justify-between px-4 mx-auto max-w-[1200px] pt-4 pb-4">
@@ -19,20 +25,32 @@ const Header = () => {
           <Link href="/">
             <div className="rounded-[100%] border-2 border-white justify-center items-center h-auto px-5 py-5">
               <h1 className="text-white text-xl w-full text-center">
-              <p>  mind</p> Space
+                <p>  mind</p> Space
               </h1>
             </div>
           </Link>
         </div>
 
 
-        <div className="items-center hidden space-x-6 md:flex text-gray-300">
-          <Link href="/about" className={linkClass('/about')}>About us</Link>
-          <Link href="/" className={linkClass('/ourwork')}>Our work</Link>
-          <Link href="/" className={linkClass('/ourclient')}>Our clients</Link>
-          <Link href="/" className={linkClass('/ourteam')}>Our team</Link>
 
-        </div>
+        <ul className="items-center hidden space-x-6 md:flex text-gray-300">
+          <li>
+            <Link href="/about" className={navLinkClasses}>About us</Link>
+          </li>
+          <li>
+            <Link href="/ourwork" className={navLinkClasses}>Our work</Link>
+          </li>
+          <li>
+            <Link href="/ourclient" className={navLinkClasses}>Our clients</Link>
+          </li>
+          <li>
+            <Link href="/ourteam" className={navLinkClasses}>Our team</Link>
+          </li>
+          <li>
+            <LanguageSwitcher />
+          </li>
+        </ul>
+
 
         <button
           className="flex flex-col gap-1 md:hidden"
