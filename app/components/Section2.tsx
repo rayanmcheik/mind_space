@@ -23,38 +23,42 @@ const Section2 = () => {
   return (
     <div className="w-full h-auto bg-black">
       <div className="w-full h-auto px-5 md:pt-20 pb-12 mx-auto max-w-[1200px] container pt-20">
-                  <Section1></Section1>
+        <Section1 />
         <div className="flex flex-col bg-black">
-          <div className="grid grid-cols-2 px-16">
+          <div className="grid grid-cols-2 gap-8 px-16">
             {data.sections.map((section: any) => (
               <div key={section.id} className="pr-8">
-                <a
-                  href={section.details.cta_link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block cursor-pointer"
-                >
-                  <div className="w-full h-64 mt-2 overflow-hidden ">
-                    {section.details.image && (
-                      <img
-                        src={section.details.image}
-                        alt={section.title}
-                        className="object-cover w-full h-full transition-transform duration-300 ease-in-out hover:scale-110"
-                      />
-                    )}
-                  </div>
-
-                  <h2 className="pt-5 pb-3 text-xl font-bold text-white">
-                    {section.title}
-                  </h2>
-
-                  {section.details.text && (
-                    <div
-                      className="pr-4 mb-16 text-sm text-white"
-                      dangerouslySetInnerHTML={{ __html: section.details.text }}
+                <div className="w-full h-64 mt-2 overflow-hidden">
+                  {section.details.image && (
+                    <img
+                      src={section.details.image}
+                      alt={section.title}
+                      className="object-cover w-full h-full transition-transform duration-300 ease-in-out hover:scale-110"
                     />
                   )}
-                </a>
+                </div>
+
+                <h2 className="pt-5 pb-3 text-xl font-bold text-white">
+                  {section.title}
+                </h2>
+
+                {section.details.text && (
+                  <div
+                    className="pr-4 mb-4 text-sm text-white"
+                    dangerouslySetInnerHTML={{ __html: section.details.text }}
+                  />
+                )}
+
+                {section.details.cta_link && (
+                  <a
+                    href={section.details.cta_link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block px-6 py-2 mb-16 font-bold text-white transition-colors bg-red-500 rounded-md hover:bg-red-600"
+                  >
+                    {section.details.cta_text || "Read More"}
+                  </a>
+                )}
               </div>
             ))}
           </div>

@@ -17,9 +17,13 @@ const Section1 = () => {
       <div className="fixed left-[4vw] top-1/2 -translate-y-1/2 w-2 h-[170px] bg-gray-300 rounded-md overflow-hidden">
         <div className="w-full transition-all duration-200 bg-red-500 rounded-md" style={{ height: `${scrollHeight}px` }} ></div>
       </div>
+
+      <div className="absolute border-8 border-blue-500 rounded-full w-[500px] h-[500px] ml-82 "></div>
+
+      
       <div className="relative py-4 pt-0 text-center">
         <div className="relative flex-col mx-auto">
-          <div className="flex flex-col text-[90px] font-normal py-0">
+          <div className="flex flex-col text-[90px] py-0 font-poppins ">
             <h1 className="-mb-6 text-white">here’s a teeny-weeny</h1>
             <h1 className="-mt-2 -mb-6 text-white">glimpse of our work.</h1>
             <h1 className="-mt-2 text-white">what’s coming later is</h1>
