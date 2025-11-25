@@ -12,7 +12,7 @@ const Section1 = () => {
 
             const scrollTop = window.scrollY;
 
-            const progress = (scrollTop / pageHeight) * 200;
+            const progress = (scrollTop / pageHeight) * 180;
             setScrollHeight(progress);
         };
 
