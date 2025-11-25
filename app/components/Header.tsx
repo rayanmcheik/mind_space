@@ -67,7 +67,7 @@ const navLinkClasses =
           </div>
         </Link>
 
-        <ul className="hidden md:flex items-center space-x-6">
+        <ul className="hidden md:flex items-center space-x-6 pr-10">
           {menuItems.map((item) => (
             <li key={item.path}>
               <Link href={item.path} className={navLinkClasses}>

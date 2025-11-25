@@ -20,7 +20,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body className="font-momo">
         <Header /> 
-        <main className="relative min-h-screen container mx-auto mt-6">
+        <main className="relative min-h-screen">
           <Section1></Section1>
           {children} 
         </main>
