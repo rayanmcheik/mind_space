@@ -1,65 +1,58 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 
 const Section1 = () => {
-  const [data, setData] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
+    const [scrollHeight, setScrollHeight] = useState(0);
 
-  useEffect(() => {
-    axios
-      .get('https://hanzo.dxpshift.com/api/page/news')
-      .then((res) => {
-        if (res.data.success) setData(res.data.data);
-      })
-      .catch(console.error)
-      .finally(() => setLoading(false));
-  }, []);
+    useEffect(() => {
+        const handleScroll = () => {
+            const pageHeight =
+                document.documentElement.scrollHeight -
+                document.documentElement.clientHeight;
 
-  if (loading) return <div>Loading...</div>;
-  if (!data) return <div>No data available</div>;
+            const scrollTop = window.scrollY;
 
-  return (
-    <div className="w-full h-auto bg-black">
-      <div className="w-full h-auto px-5 md:pt-32 pb-12 mx-auto max-w-[1200px] container pt-20">
-        <div className="flex flex-col bg-black">
-          <div className="grid grid-cols-2 px-16">
-            {data.sections.map((section: any) => (
-              <div key={section.id} className="pr-8">
-                <a
-                  href={section.details.cta_link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block cursor-pointer"
-                >
-                  <div className="w-full h-64 mt-2 overflow-hidden ">
-                    {section.details.image && (
-                      <img
-                        src={section.details.image}
-                        alt={section.title}
-                        className="object-cover w-full h-full transition-transform duration-300 ease-in-out hover:scale-110"
-                      />
-                    )}
-                  </div>
+            const progress = (scrollTop / pageHeight) * 200;
+            setScrollHeight(progress);
+        };
 
-                  <h2 className="pt-5 pb-3 text-xl font-bold text-white">
-                    {section.title}
-                  </h2>
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
-                  {section.details.text && (
-                    <div
-                      className="pr-4 mb-16 text-sm text-white"
-                      dangerouslySetInnerHTML={{ __html: section.details.text }}
-                    />
-                  )}
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+    return (
+        <>
+            <div className="fixed left-[4vw] top-1/2 -translate-y-1/2 w-2 h-[170px] bg-gray-300 rounded-md overflow-hidden">
+                <div
+                    className="w-full transition-all duration-200 bg-red-500 rounded-md"
+                    style={{ height: `${scrollHeight}px` }}
+                ></div>
+            </div>
+
+            <div className="py-4 text-center">
+
+                <div className='relative flex-col mx-auto'>
+                    <div className='flex flex-col text-[90px] font-normal py-0'>
+                        <h1 className='-mb-6 text-white'>here’s a teeny-weeny</h1>
+                        <h1 className='-mt-2 -mb-6 text-white'>glimpse of our work.</h1>
+                        <h1 className='-mt-2 text-white'>what’s coming later is</h1>
+
+                    </div>
+                    <div className="flex flex-row items-end justify-center w-full h-12 pt-30 pb-52">
+                        <span className="flex items-center justify-center w-20 h-1 mb-10 text-white bg-cyan-500 rounded-l-2xl"></span>
+                        <span className="flex items-center justify-center w-8 h-1 mb-10 text-white bg-red-500 rounded-r-2xl"></span>
+                        <h1 className='text-red-500 text-[100px] font-bold pr-10 pl-5' >even </h1>
+                        <h1 className='text-white text-[100px] font-bold pr-5 ' >greater</h1>
+                        <span className="flex items-center justify-center h-1 mb-10 bg-red-500 w-14 rounded-l-2xl"></span>
+                        <span className="flex items-center justify-center w-4 h-1 mb-10 mr-4 bg-cyan-500 rounded-r-2xl"></span>
+                        <span className="flex items-center justify-center w-10 h-1 mb-10 bg-cyan-500 rounded-2xl"></span>
+                    </div>
+                </div>
+
+
+            </div>
+        </>
+    );
 };
 
 export default Section1;
