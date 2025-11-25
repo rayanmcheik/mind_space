@@ -22,7 +22,7 @@ const Section2 = () => {
 
   return (
     <div className="w-full h-auto bg-black">
-      <div className="w-full h-auto px-5 md:pt-32 pb-12 mx-auto max-w-[1200px] container pt-20">
+      <div className="w-full h-auto px-5 md:pt-20 pb-12 mx-auto max-w-[1200px] container pt-20">
                   <Section1></Section1>
         <div className="flex flex-col bg-black">
           <div className="grid grid-cols-2 px-16">
