@@ -9,21 +9,21 @@ const Header = () => {
   const pathname = usePathname();
 
 
- useEffect(() => {
-  document.body.style.overflow = menuOpen ? "hidden" : "auto";
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "auto";
 
-  return () => {
-    document.body.style.overflow = "auto";
-  };
-
-
-}, [menuOpen]);
+    return () => {
+      document.body.style.overflow = "auto";
+    };
 
 
-const linkClass = (path: string) => {
-  const isActive = pathname === path;
+  }, [menuOpen]);
 
-  return `
+
+  const linkClass = (path: string) => {
+    const isActive = pathname === path;
+
+    return `
     relative 
     transition 
     pb-1
@@ -42,10 +42,10 @@ const linkClass = (path: string) => {
     before:origin-center
     ${isActive ? "before:scale-x-100" : "before:scale-x-0 hover:before:scale-x-100"}
   `;
-};
+  };
 
 
-const navLinkClasses =
+  const navLinkClasses =
     "relative text-gray-300 hover:text-white before:absolute before:top-6 before:rounded-lg before:left-1/4 before:w-1/2 before:h-1 before:bg-blue-500 before:scale-x-0 hover:before:scale-x-100 before:origin-center before:transition-transform before:duration-300";
 
   const menuItems = [
@@ -56,16 +56,49 @@ const navLinkClasses =
   ];
 
   return (
-    <nav className="w-full bg-black shadow-md relative border-b-2 border-blue-500 md:border-b-0">
-      <div className="container mx-auto max-w-[1200px] px-4 py-4 flex items-center justify-between">
+    <div className="md:w-full bg-black shadow-md md:relative border-b-2 border-blue-500 md:border-b-0  z-50 w-full block top-5 right-5">
+      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
 
         <Link href="/">
-          <div className="rounded-full border-2 border-white flex justify-center items-center h-auto px-5 py-5">
-            <h1 className="text-white text-xl text-center">
-              <p>mind</p> Space
-            </h1>
-          </div>
+          <svg
+            width="120"
+            height="120"
+            viewBox="0 0 120 120"
+            className="cursor-pointer"
+          >
+            <circle
+              cx="60"
+              cy="60"
+              r="50"
+              stroke="white"
+              strokeWidth="2"
+              fill="none"
+            />
+            <text
+              x="50%"
+              y="45%"
+              fill="white"
+              fontSize="20"
+              textAnchor="middle"
+              dominantBaseline="middle"
+              fontFamily="sans-serif"
+            >
+              mind
+            </text>
+            <text
+              x="50%"
+              y="65%"
+              fill="white"
+              fontSize="20"
+              textAnchor="middle"
+              dominantBaseline="middle"
+              fontFamily="sans-serif"
+            >
+              Space
+            </text>
+          </svg>
         </Link>
+
 
         <ul className="hidden md:flex items-center space-x-6 pr-10">
           {menuItems.map((item) => (
@@ -80,32 +113,29 @@ const navLinkClasses =
           </li>
         </ul>
 
-        
+
         <button
           className="md:hidden flex flex-col relative w-10 h-10 justify-center"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           <span
-            className={`block h-1 bg-white rounded-lg transition-all duration-300 ${
-              menuOpen ? "rotate-45 translate-y-0.5 w-full mb-0" : "w-10 mb-1"
-            }`}
+            className={`block h-1 bg-white rounded-lg transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-0.5 w-full mb-0" : "w-10 mb-1"
+              }`}
           ></span>
 
           <span
-            className={`block h-1 bg-white rounded-lg transition-all duration-300 ${
-              menuOpen ? "-rotate-45 -translate-y-0.5 w-full mb-0" : "w-6 mb-0"
-            }`}
+            className={`block h-1 bg-white rounded-lg transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-0.5 w-full mb-0" : "w-6 mb-0"
+              }`}
           ></span>
         </button>
       </div>
 
       <div
-        className={`md:hidden fixed left-0 w-full bg-black  overflow-auto transition-all duration-300 ease-in-out ${
-          menuOpen ? "h-[73vh] py-4 border-b-2 border-blue-500" : "h-0 py-0 "
-        }`}
+        className={`md:hidden fixed left-0 w-full bg-black  overflow-auto transition-all duration-300 ease-in-out ${menuOpen ? "h-[73vh] py-4 border-b-2 border-blue-500" : "h-0 py-0 "
+          }`}
         style={{ zIndex: 999 }}
       >
-        <ul className="flex flex-col items-center gap-7 text-4xl px-2">
+        <ul className="flex flex-col items-center gap-7 text-4xl pl-2">
           {menuItems.map((item) => (
             <li key={item.path}>
               <Link
@@ -122,7 +152,7 @@ const navLinkClasses =
           </li>
         </ul>
       </div>
-    </nav>
+    </div>
   );
 };
 

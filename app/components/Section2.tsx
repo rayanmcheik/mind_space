@@ -17,17 +17,18 @@ const Section2 = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div className='w-full bg-black flex justify-center items-start h-lvh'><h1 className='font-bold text-3xl text-white'>Loading...</h1></div>;
   if (!data) return <div>No data available</div>;
 
   return (
     <div className="w-full h-auto bg-black">
-      <div className="w-full h-auto px-5 md:pt-20 pb-12 mx-auto max-w-[1200px] container pt-20">
-        <Section1 />
+      <div className="w-full h-auto px-0 md:pt-20 pb-12 mx-auto container pt-20 ">
+       
         <div className="flex flex-col bg-black">
-          <div className="grid grid-cols-2 gap-8 px-16">
+     
+          <div className="grid md:grid-cols-2 md:gap-8 px-16 grid-cols-1 gap-3">
             {data.sections.map((section: any) => (
-              <div key={section.id} className="pr-8">
+              <div key={section.id} className="">
                 <div className="w-full h-64 mt-2 overflow-hidden">
                   {section.details.image && (
                     <img
@@ -54,7 +55,7 @@ const Section2 = () => {
                     href={section.details.cta_link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block px-6 py-2 mb-16 font-bold text-white transition-colors bg-red-500 rounded-md hover:bg-red-600"
+                    className="inline-block  py-2 mb-16 font-bold text-white transition-colors rounded-md "
                   >
                     {section.details.cta_text || "Read More"}
                   </a>
