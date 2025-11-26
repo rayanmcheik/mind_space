@@ -15,7 +15,7 @@ const Section1 = () => {
   }, []);
   return (
     <div className="w-full h-auto bg-black ">
-      <div className='w-full h-auto px-0 md:pt-20 md:pb-12 mx-auto container pt-20 '>
+      <div className='w-full h-auto px-0 md:pt-20 md:pb-12 mx-auto container pt-52 '>
 
       <div className="fixed top-1/2 -translate-y-1/2 w-2 h-[170px] bg-gray-300 rounded-md overflow-hidden">
         <div className="w-full transition-all duration-200 bg-red-500 rounded-md" style={{ height: `${scrollHeight}px` }} ></div>
@@ -25,7 +25,7 @@ const Section1 = () => {
 <div className='flex items-center justify-center'>
       <svg
         viewBox="0 0 500 500"
-        className="static w-[200px] h-[200px] md:w-[500px] md:h-[500px]  justify-center md:-mt-0 -mt-10"
+        className="static w-[200px] h-[200px] md:w-[500px] md:h-[500px]  justify-center  -mt-10"
       >
         <circle
           cx="250"
