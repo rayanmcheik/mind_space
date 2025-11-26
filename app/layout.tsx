@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "./components/Header";
 import Section2 from "./components/Section2";
 import Section1 from "./components/Section1";
+import Footer from "./components/Footer";
 
 
 const momoTrust = localFont({
@@ -21,11 +22,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="icon" href="/logo.png" />
       </head>
       <body className="font-momo">
+        <Header />
+        <main className="relative min-h-screen">
 
-        <main className="min-h-screen">
-          <Header />
           <Section1 />
           <Section2></Section2>
+          <Footer />
           {children}
         </main>
       </body>

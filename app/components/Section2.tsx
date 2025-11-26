@@ -26,7 +26,7 @@ const Section2 = () => {
        
         <div className="flex flex-col bg-black">
      
-          <div className="grid md:grid-cols-2 md:gap-8 px-16 grid-cols-1 gap-3">
+          <div className="grid md:grid-cols-2 md:gap-8  grid-cols-1 gap-3">
             {data.sections.map((section: any) => (
               <div key={section.id} className="">
                 <div className="w-full h-64 mt-2 overflow-hidden">
@@ -55,7 +55,7 @@ const Section2 = () => {
                     href={section.details.cta_link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block  py-2 mb-16 font-bold text-white transition-colors rounded-md "
+                    className="inline-block  py-2 mb-16 font-bold text-red-500 transition-colors rounded-md "
                   >
                     {section.details.cta_text || "Read More"}
                   </a>

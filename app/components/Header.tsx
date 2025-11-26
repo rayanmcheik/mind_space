@@ -57,7 +57,7 @@ const Header = () => {
 
   return (
     <div className="md:w-full bg-black shadow-md md:relative border-b-2 border-blue-500 md:border-b-0 z-50 w-full fixed ">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <div className="container mx-auto  py-4 flex items-center justify-between">
 
         <Link href="/">
           <svg
@@ -100,7 +100,7 @@ const Header = () => {
         </Link>
 
 
-        <ul className="hidden md:flex items-center space-x-6 pr-10">
+        <ul className="hidden md:flex items-center space-x-6 ">
           {menuItems.map((item) => (
             <li key={item.path}>
               <Link href={item.path} className={navLinkClasses}>
