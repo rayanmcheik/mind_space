@@ -35,7 +35,7 @@ const AnimatedCircle = () => {
             gsap.to(darkCircle, {
                 strokeDashoffset: 0,
                 duration: 5,
-                strokeWidth: 6,
+                strokeWidth: 4,
                 ease: "power2.out",
             });
         }
