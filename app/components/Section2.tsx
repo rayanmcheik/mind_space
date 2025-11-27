@@ -17,16 +17,16 @@ const Section2 = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) return <div className='w-full bg-black flex justify-center items-start h-lvh'><h1 className='font-bold text-3xl text-white'>Loading...</h1></div>;
+  if (loading) return <div className='flex items-start justify-center w-full bg-black h-lvh'><h1 className='text-3xl font-bold text-white'>Loading...</h1></div>;
   if (!data) return <div>No data available</div>;
 
   return (
     <div className="w-full h-auto bg-black">
-      <div className="w-full h-auto px-0 md:pt-20 pb-12 mx-auto container pt-20 ">
+      <div className="container w-full h-auto px-0 pt-20 pb-12 mx-auto md:pt-20 ">
        
         <div className="flex flex-col bg-black">
      
-          <div className="grid md:grid-cols-2 md:gap-8  grid-cols-1 gap-3">
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-8">
             {data.sections.map((section: any) => (
               <div key={section.id} className="">
                 <div className="w-full h-64 mt-2 overflow-hidden">
@@ -55,7 +55,7 @@ const Section2 = () => {
                     href={section.details.cta_link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block  py-2 mb-16 font-bold text-red-500 transition-colors rounded-md "
+                    className="inline-block py-2 mb-16 font-bold text-red-500 transition-colors rounded-md "
                   >
                     {section.details.cta_text || "Read More"}
                   </a>

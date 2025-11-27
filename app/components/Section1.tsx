@@ -23,7 +23,7 @@ const Section1 = () => {
       <div className="fixed top-1/2 -translate-y-1/2 w-2 h-[170px] bg-gray-300 rounded-md overflow-hidden left-10">
           <div className="w-full transition-all duration-200 bg-red-500 rounded-md border-[0.2px] border-gray-400" style={{ height: `${scrollHeight}px` }} ></div>
         </div>
-      <div className='container w-full h-auto px-0 mx-auto md:pt-20 md:pb-12 pt-52 '>
+      <div className='container w-full h-auto px-0 mx-auto md:pt-10 md:pb-12 pt-52 '>
 
         
 
@@ -31,20 +31,7 @@ const Section1 = () => {
           <div className="relative flex-col mx-auto">
             <div className='flex items-center justify-center '>
               <AnimatedCircle/>
-              {/* <svg
-                viewBox="0 0 500 500"
-                className="static w-[200px] h-[200px] md:w-[500px] md:h-[500px] justify-center md:pt-10 mt-44"
-              >
-                <circle
-                  cx="250"
-                  cy="250"
-                  r="240"
-                  stroke="cyan"
-                  strokeWidth="8"
-                  fill="transparent"
-
-                />
-              </svg> */}
+             
             </div>
             <div className="flex flex-col md:text-[90px] py-0 font-poppins text-3xl px-5 md:px-0 md:-mt-[440px] -mt-48">
               <h1 className="mb-0 text-white md:-mb-6">here’s a teeny-weeny</h1>

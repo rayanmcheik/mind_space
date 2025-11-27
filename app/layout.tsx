@@ -2,8 +2,7 @@ import type { ReactNode } from "react";
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./components/Header";
-import Section2 from "./components/Section2";
-import Section1 from "./components/Section1";
+
 import Footer from "./components/Footer";
 
 
@@ -23,13 +22,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body className="font-momo">
         <Header />
-        <main className="relative min-h-screen">
-
-          <Section1 />
-          <Section2></Section2>
-          <Footer />
+        <main className="min-h-screen ">
           {children}
+        
+         
+
         </main>
+         <Footer />
       </body>
     </html>
   );
