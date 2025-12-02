@@ -40,9 +40,7 @@ export default function AboutDetails() {
             <div className="container w-full h-full px-0 pt-20 pb-12 mx-auto md:pt-20 md:pb-52">
                 <div className="flex flex-col items-center justify-center">
                     <h1 className="mb-4 text-3xl font-bold text-white">{project.title}</h1>
-                    <p className="mb-6 text-neutral-600">
-                        Project ID: {id} — Index: {index}
-                    </p>
+                    
                     <img
                         src={project.image}
                         className="w-full max-w-3xl mb-8 rounded-lg"
