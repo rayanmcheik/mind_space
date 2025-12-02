@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import AnimatedCircle from "../components/AnimatedCircle";
+import AnimatedCircleAbout from "./AnimatedCircleAbout";
 
 interface Project {
     id: number;
@@ -32,7 +32,7 @@ export default function AboutPage() {
         <div className="w-full h-full bg-black">
             <div className="container w-full h-full px-0 pt-20 pb-12 mx-auto md:pt-20 md:pb-52">
                 <div className="pl-28">
-                    <AnimatedCircle />
+                    <AnimatedCircleAbout />
                 </div>
 
                 <div className="w-[1000px] h-[400px] pl-24">
@@ -45,7 +45,7 @@ export default function AboutPage() {
                         autoplay={{ delay: 5000, disableOnInteraction: false }}
                         coverflowEffect={{ rotate: 50, stretch: 0, depth: 200, modifier: 1, slideShadows: true }}
                         modules={[EffectCoverflow, Autoplay]}
-                        className="md:w-[1000px] md:-mt-[440px] h-[400px]"
+                        className="md:w-[1000px] md:-mt-[540px] h-[400px]"
                     >
 
                         {Array.isArray(projects) && projects.map((project) => (
