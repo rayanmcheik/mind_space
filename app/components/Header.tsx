@@ -41,7 +41,7 @@ const Header = () => {
           {menuItems.map((item) => (
             <li key={item.path}>
               {item.newTab ? (
-                <a href={item.path} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">
+                <a href={item.path} rel="noopener noreferrer" className="text-gray-300 hover:text-white">
                   {item.name}
                 </a>
               ) : (
