@@ -62,7 +62,14 @@ export default function AboutPage() {
                                             {project.title}
                                         </h2>
                                     </div>
+                                    <a
+                                        href={`/about/${project.id}`}
+                                        className="absolute px-4 py-2 text-xl font-semibold text-white transition rounded-lg bottom-2 right-2 "
+                                    >
+                                        See More
+                                    </a>
                                 </SwiperSlide>
+
                             ))}
                         <div className="w-10 h-10 text-red-500! swiper-button-prev"></div>
                         <div className="w-10 h-10 text-red-500! swiper-button-next"></div>
