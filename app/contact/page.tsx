@@ -47,7 +47,7 @@ const contact = () => {
             <div className="container w-full h-full px-0 pt-20 pb-12 mx-auto md:pt-20 md:pb-52">
                 <div className='flex items-center justify-center'>
                     <AnimatedCirclecontact />
-                 <div className="absolute w-full max-w-3xl p-8 border shadow-xl zb-10 backdrop-blur-lg border-cyan-500 rounded-2xl md:pb-12 md:-mt-28">
+                 <div className="absolute w-full max-w-3xl p-8 border shadow-xl zb-10 backdrop-blur-lg border-cyan-500 rounded-2xl md:pb-12 md:-mt-10">
                 <h1 className="mb-6 text-3xl font-bold text-center text-white md:pt-10 md:text-4xl md:pb-8">
                     Contact Us
                 </h1>
@@ -111,11 +111,11 @@ const contact = () => {
                     <div className="flex items-center justify-center">
                        <button
                             type="submit"
-                            className="px-6 py-3 text-2xl font-semibold text-white transition rounded-lg bg-cyan-500 hover:bg-cyan-600"
+                            className="px-6 py-2 text-2xl font-semibold text-white transition rounded-lg bg-cyan-500 hover:bg-cyan-600"
                         >Send Message</button> 
                     </div>
                     {submitted && (
-                        <p className="mt-4 text-center text-cyan-500">
+                        <p className="text-center text-cyan-500">
                             Your message has been sent successfully!
                         </p>
                     )}
