@@ -24,47 +24,46 @@ const Contactdetails = () => {
   return (
     <div className="w-full h-auto bg-black">
       <div className="container w-full h-auto px-0 pt-20 pb-12 mx-auto md:pt-96 ">
-       
+
         <div className="flex flex-col items-center justify-center bg-black">
 
           <div className="grid items-center grid-cols-1 gap-3 ">
             {data.sections.map((section: any) => (
-              <div key={section.id} className="flex flex-col items-center justify-center pb-48">
+              <div key={section.id} className="flex flex-col items-center justify-center pb-80">
                 <div className='flex items-center justify-center w-full h-full'>
-                <AnimatedCirclecontact />
+                  <AnimatedCirclecontact />
                 </div>
-                <div className=" w-full h-80 overflow-hidden -mt-[600px] flex items-center justify-center ">
-                       
-                  {section.details.image && (
-                    <img
-                      src={section.details.image}
-                      alt={section.title}
-                      className="object-cover w-1/2 h-full transition-transform duration-300 ease-in-out hover:scale-110"
-                    />
-                  )}
-                </div>
+                <div 
+                style={{ cursor: 'url("./cursor.svg") 16 16, auto' }}
+  className="w-full h-80 overflow-hidden -mt-[600px] flex items-center justify-center ${./cursor.svg}"
 
-                <h2 className="pt-5 pb-3 text-xl font-bold text-white">
-                  {section.title}
-                </h2>
-
-                {section.details.text && (
-                  <div
-                    className="pr-4 mb-4 text-sm text-white"
-                    dangerouslySetInnerHTML={{ __html: section.details.text }}
-                  />
-                )}
+>
+  {section.details.image && (
+    <img
+      src={section.details.image}
+      alt={section.title}
+      className="object-cover w-1/2 h-full transition-all duration-300 ease-in-out hover:brightness-50"
+    />
+  )}
+</div>
 
                 {section.details.cta_link && (
-                  <a
-                    href={section.details.cta_link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block py-2 mb-16 font-bold text-red-500 transition-colors rounded-md "
-                  >
-                    {section.details.cta_text || "Read More"}
-                  </a>
+                  <h2 className="relative text-[60px] font-bold text-white cursor-pointer group -mt-28 w-1/2 ml-[650px]">
+                    <span className="transition-opacity duration-300 group-hover:opacity-0">
+                      {section.title}
+                    </span>
+
+                    <a
+                      href={section.details.cta_link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute top-0 left-0 w-full text-left text-[40px] text-red-500 mt-28 ml-28 transition-opacity duration-300  rounded opacity-0 bg-opacity-70 p-2 group-hover:opacity-100 inline-block"
+                    >
+                      {section.details.cta_text || "Read More"}
+                    </a>
+                  </h2>
                 )}
+
               </div>
             ))}
           </div>

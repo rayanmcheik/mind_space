@@ -16,10 +16,10 @@ const Header = () => {
   }, [menuOpen]);
 
   const menuItems = [
-    { name: "About us", path: "/about", newTab: true },
-    { name: "Our work", path: "/ourwork" },
-    { name: "Our clients", path: "/ourclient" },
-    { name: "Our team", path: "/ourteam" },
+    { name: "about us", path: "/about", newTab: true },
+    { name: "our work", path: "/ourwork" },
+    { name: "our clients", path: "/ourclient" },
+    { name: "our team", path: "/ourteam" },
     { name: "contact us", path: "/contact" },
   ];
 
