@@ -42,17 +42,17 @@ const contact = () => {
         }
     };
     return (
-        <div className="w-full h-full bg-black pb-80">
+        <div className="w-full h-full bg-black pb-70">
             <ToTopButton></ToTopButton>
             <div className="container w-full h-full px-0 pt-20 pb-12 mx-auto md:pt-20 md:pb-52">
-                
+                <div className='flex items-center justify-center'>
                     <AnimatedCirclecontact />
-                 <div className="relative z-10 w-full max-w-3xl p-8 border shadow-xl backdrop-blur-lg border-amber-50 rounded-2xl md:p-12">
-                <h1 className="mb-6 text-3xl font-bold text-center text-white md:text-4xl">
+                 <div className="absolute w-full max-w-3xl p-8 border shadow-xl zb-10 backdrop-blur-lg border-cyan-500 rounded-2xl md:pb-12 md:-mt-28">
+                <h1 className="mb-6 text-3xl font-bold text-center text-white md:pt-10 md:text-4xl md:pb-8">
                     Contact Us
                 </h1>
 
-                <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+                <form onSubmit={handleSubmit} className="flex flex-col gap-6 ">
                     <div className="relative w-full">
                         <input
                             type="text"
@@ -60,7 +60,7 @@ const contact = () => {
                             placeholder=" "
                             value={formData.name}
                             onChange={handleChange}
-                            className={`w-full pt-6 pb-1 pl-2 text-2xl text-white placeholder-transparent capitalize bg-transparent border-b-2 peer focus:outline-none ${errors.name ? 'border-red-500' : 'border-gray-300 focus:border-white'
+                            className={`w-full pt-6 pb-1 pl-2 text-2xl text-white placeholder-transparent capitalize bg-transparent border-b-2 peer focus:outline-none ${errors.name ? 'border-red-500' : 'border-gray-300 focus:border-cyan-500'
                                 }`}
                         />
                         <label
@@ -78,7 +78,7 @@ const contact = () => {
                             placeholder=" "
                             value={formData.email}
                             onChange={handleChange}
-                            className={`w-full pt-6 pb-1 pl-2 text-2xl text-white placeholder-transparent bg-transparent border-b-2 peer focus:outline-none ${errors.email ? 'border-red-500' : 'border-gray-300 focus:border-white'
+                            className={`w-full pt-6 pb-1 pl-2 text-2xl text-white placeholder-transparent bg-transparent border-b-2 peer focus:outline-none ${errors.email ? 'border-red-500' : 'border-gray-300 focus:border-cyan-500'
                                 }`}
                         />
                         <label
@@ -97,7 +97,7 @@ const contact = () => {
                             value={formData.message}
                             onChange={handleChange}
                             rows={6}
-                            className={`w-full pt-6 pb-1 pl-2 text-2xl text-white placeholder-transparent capitalize bg-transparent border-b-2 peer focus:outline-none ${errors.message ? 'border-red-500' : 'border-gray-300 focus:border-white'
+                            className={`w-full pt-6 pb-1 pl-2 text-2xl text-white placeholder-transparent capitalize bg-transparent border-b-2 peer focus:outline-none ${errors.message ? 'border-red-500' : 'border-gray-300 focus:border-cyan-500'
                                 }`}
                         />
                         <label
@@ -109,21 +109,18 @@ const contact = () => {
                         {errors.message && <p className="mt-1 text-sm text-red-400">{errors.message}</p>}
                     </div>
                     <div className="flex items-center justify-center">
-                        {/* <Button
-                            Text="Send Message"
-                            src="#"
-                            color="text-white"
-                            hovercolor="hover:text-black"
-                            bgcolor="bg-black"
-                            bgcolorhover="hover:bg-white"
-                        /> */}
+                       <button
+                            type="submit"
+                            className="px-6 py-3 text-2xl font-semibold text-white transition rounded-lg bg-cyan-500 hover:bg-cyan-600"
+                        >Send Message</button> 
                     </div>
                     {submitted && (
-                        <p className="mt-4 text-center text-green-300">
+                        <p className="mt-4 text-center text-cyan-500">
                             Your message has been sent successfully!
                         </p>
                     )}
                 </form>
+            </div>
             </div>
                 </div>
             </div>
