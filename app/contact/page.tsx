@@ -69,7 +69,7 @@ const contact = () => {
                         >
                             Name
                         </label>
-                        {errors.name && <p className="mt-1 text-sm text-red-400">{errors.name}</p>}
+                        {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name}</p>}
                     </div>
                     <div className="relative w-full">
                         <input
@@ -87,7 +87,7 @@ const contact = () => {
                         >
                             Email
                         </label>
-                        {errors.email && <p className="mt-1 text-sm text-red-400">{errors.email}</p>}
+                        {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
                     </div>
 
                     <div className="relative w-full">
@@ -106,7 +106,7 @@ const contact = () => {
                         >
                             Your Message
                         </label>
-                        {errors.message && <p className="mt-1 text-sm text-red-400">{errors.message}</p>}
+                        {errors.message && <p className="mt-1 text-sm text-red-500">{errors.message}</p>}
                     </div>
                     <div className="flex items-center justify-center">
                        <button
