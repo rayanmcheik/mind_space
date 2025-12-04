@@ -21,7 +21,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body className="font-momo">
         <Header />
-        <main className="min-h-screen ">
+        <main className="">
           {children}
         
          

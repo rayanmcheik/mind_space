@@ -44,7 +44,7 @@ const AnimatedCirclecontact = () => {
     return (
         <svg
             viewBox="0 0 600 600"
-            className="w-[200px] h-[200px] md:w-[750px] md:h-[750px] -mt-6 ml-10"
+            className="w-[400px] h-[400px] md:w-[750px] md:h-[750px] -mt-6 ml-10"
         >
             <defs>
 

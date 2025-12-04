@@ -6,8 +6,8 @@ const OurTeam = () => {
 
     return (
         <div className="w-full h-full bg-black pb-52">
-            <div className="container w-full h-full px-0  mx-auto ">
-                <div className="relative w-full h-[80lvh]">
+            <div className="container w-full h-full px-0 mx-auto">
+                <div className="relative w-full md:h-[80lvh] h-lvh">
                     <img
                         src="./ourteam.jpg"
                         alt="Our Team Banner"
@@ -23,9 +23,14 @@ const OurTeam = () => {
                 </div>
 
                 {popup && (
-                    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-                        <div className="bg-cyan-500 w-[90%] max-w-[400px] p-6 rounded-xl shadow-xl relative">
-
+                    <div
+                        className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+                        onClick={() => setOpenpop(false)}
+                    >
+                        <div
+                            className="bg-cyan-500 w-[90%] max-w-[400px] p-6 rounded-xl shadow-xl relative"
+                            onClick={(e) => e.stopPropagation()}
+                        >
                             <button
                                 onClick={() => setOpenpop(false)}
                                 className="absolute top-3 right-3 text-black hover:text-red-500 text-xl cursor-pointer"

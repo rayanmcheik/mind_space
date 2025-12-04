@@ -29,11 +29,11 @@ const Section1 = () => {
 
         <div className="relative px-5 py-4 text-center md:py-4 md:mt-0 -mt-52 md:px-0">
           <div className="relative flex-col mx-auto">
-            <div className='flex items-center justify-center '>
+            <div className='flex items-center justify-center md:mt-0 mt-48'>
               <AnimatedCircle/>
              
             </div>
-            <div className="flex flex-col md:text-[90px] py-0 font-poppins text-3xl px-5 md:px-0 md:-mt-[440px] -mt-48">
+            <div className="flex flex-col md:text-[90px] py-0 font-poppins text-4xl px-5 md:px-0 md:-mt-[440px] -mt-68 leading-15 md:leading-none">
               <h1 className="mb-0 text-white md:-mb-6">here’s a teeny-weeny</h1>
               <h1 className="mb-0 text-white md:mt-3 md:mb-0">glimpse of our work.</h1>
               <h1 className="text-white ">what’s coming later is</h1>

@@ -33,19 +33,19 @@ const Contactdetails = () => {
                 <div className='flex items-center justify-center w-full h-full'>
                   <AnimatedCirclecontact />
                 </div>
-                <div 
-                style={{ cursor: 'url("./cursor.svg") 16 16, auto' }}
-  className="w-full h-80 overflow-hidden -mt-[600px] flex items-center justify-center ${./cursor.svg}"
+                <div
+                  style={{ cursor: 'url("./cursor.svg") 16 16, auto' }}
+                  className="w-full h-80 overflow-hidden -mt-[600px] flex items-center justify-center ${./cursor.svg}"
 
->
-  {section.details.image && (
-    <img
-      src={section.details.image}
-      alt={section.title}
-      className="object-cover w-1/2 h-full transition-all duration-300 ease-in-out hover:brightness-50"
-    />
-  )}
-</div>
+                >
+                  {section.details.image && (
+                    <img
+                      src={section.details.image}
+                      alt={section.title}
+                      className="object-cover w-1/2 h-full transition-all duration-300 ease-in-out hover:brightness-50"
+                    />
+                  )}
+                </div>
 
                 {section.details.cta_link && (
                   <h2 className="relative text-[60px] font-bold text-white cursor-pointer group -mt-28 w-1/2 ml-[650px]">

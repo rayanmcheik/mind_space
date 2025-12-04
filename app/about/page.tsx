@@ -26,12 +26,26 @@ export default function AboutPage() {
     }, []);
 
     return (
-        <div className="w-full h-full bg-black">
+        <div className="w-full h-full bg-black pb-[20%]">
             <ToTopButton></ToTopButton>
             <div className="container w-full h-full px-0 pt-20 pb-12 mx-auto md:pt-20 md:pb-52">
                 <div className="w-full h-[400px]">
                     <Swiper
                         slidesPerView={3}
+                        breakpoints={{
+
+                            0: {
+                                slidesPerView: 1,
+
+                            },
+                            
+                            620: {
+                                slidesPerView: 1,
+                            },
+                            760: {
+                                slidesPerView: 3,
+                            },
+                        }}
                         spaceBetween={20}
                         grabCursor={true}
                         loop={true}

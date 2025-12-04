@@ -44,7 +44,7 @@ const AnimatedCircle = () => {
     return (
         <svg
             viewBox="0 0 500 500"
-            className="w-[200px] h-[200px] md:w-[500px] md:h-[500px] -mt-10"
+            className="w-[360px] h-[360px] md:w-[500px] md:h-[500px] -mt-10"
         >
             <defs>
 
