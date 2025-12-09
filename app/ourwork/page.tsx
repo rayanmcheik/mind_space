@@ -56,7 +56,8 @@ const OurWork = () => {
       <div className="container w-full h-full px-0 mx-auto ">
         <div className="flex w-full h-auto justify-end pr-10">
           <div className=" fixed bottom-6  pb-10 "  >
-            <ToTopButton /> 
+            <ToTopButton />
+             
           </div>
         </div>
         <h1 className="text-center text-4xl font-bold mb-6">Categories</h1>
