@@ -5,10 +5,10 @@ import ToTopButton from "./components/totopbutton";
 
 export default function Home() {
   return (
-  <>
-  <ToTopButton></ToTopButton>
-  <Section1></Section1>
-  <Section2></Section2>
-  </>
+    <>
+      
+      <Section1></Section1>
+      <Section2></Section2>
+    </>
   )
 }

@@ -2,6 +2,7 @@
 
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import ToTopButton from "../totopbutton";
 
 async function getData() {
     const res = await fetch("https://hanzo.dxpshift.com/api/projects", {
@@ -39,6 +40,11 @@ export default function AboutDetails() {
     return (
         <div className="w-full h-full bg-black">
             <div className="container w-full h-full px-0 pt-20 pb-12 mx-auto md:pt-20 md:pb-52">
+                <div className="flex w-full h-auto justify-end pr-10">
+                    <div className=" fixed bottom-6  pb-10 "  >
+                        <ToTopButton />
+                    </div>
+                </div>
                 <div className="flex flex-col items-center justify-center text-white text-lg gap-y-4">
 
                     <h1 className="mb-4 text-3xl font-bold">{project.title}</h1>
@@ -46,41 +52,30 @@ export default function AboutDetails() {
                     {project.image && (
                         <img
                             src={project.image}
-                            className="w-full mb-8 rounded-lg"
+                            className="w-full mb-8 md:rounded-lg px-4 md:px-0 rounded-lg"
                             alt={project.title}
                         />
                     )}
 
-
-
                     {project.client && (
-                        <p><span className="font-bold">Client:</span> {project.client}</p>
+                        <p className="px-4 md:px-0"><span className="font-bold">Client:</span> {project.client}</p>
                     )}
 
                     {project.directors && (
-                        <p><span className="font-bold">Directors:</span> {project.directors}</p>
+                        <p className="px-4 md:px-0"><span className="font-bold">Directors:</span> {project.directors}</p>
                     )}
 
-                    {project.cinematographer && (
-                        <p><span className="font-bold">Cinematographer:</span> {project.cinematographer}</p>
-                    )}
 
-                    {project.colorist && (
-                        <p><span className="font-bold">Colorist:</span> {project.colorist}</p>
-                    )}
 
                     {project.agency && (
-                        <p><span className="font-bold">Agency:</span> {project.agency}</p>
+                        <p className="px-4 md:px-0"><span className="font-bold">Agency:</span> {project.agency}</p>
                     )}
 
-                    {project.date && (
-                        <p><span className="font-bold">Date:</span> {project.date}</p>
-                    )}
                     {project.vimeo_id && (
-                        <div className="w-full flex justify-center">
+                        <div className="w-full flex justify-start md:justify-center ">
                             <iframe
                                 src={`https://player.vimeo.com/video/${project.vimeo_id}`}
-                                className="w-full h-[80vh] md:h-[50vh] rounded-lg "
+                                className="w-full h-[80vh] md:h-[50vh] rounded-lg px-4 md:px-0 "
                                 frameBorder="0"
                                 allow="autoplay; fullscreen"
                                 allowFullScreen
@@ -88,12 +83,9 @@ export default function AboutDetails() {
                         </div>
                     )}
 
-                    {project.description && (
-                        <p>{project.description}</p>
-                    )}
 
                     {project.text && (
-                        <p>{project.text}</p>
+                        <p className="px-4 md:px-0 -mt-20 md:mt-0">{project.text}</p>
                     )}
                 </div>
 

@@ -29,7 +29,7 @@ const Section2 = () => {
           <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-8">
             {data.sections.map((section: any) => (
               <div key={section.id} className="">
-                <div className="w-full h-64 mt-2 overflow-hidden">
+                <div className="w-full h-64 mt-2 overflow-hidden md:px-0 px-4">
                   {section.details.image && (
                     <img
                       src={section.details.image}
@@ -39,13 +39,13 @@ const Section2 = () => {
                   )}
                 </div>
 
-                <h2 className="pt-5 pb-3 text-xl font-bold text-white">
+                <h2 className="pt-5 pb-3 text-xl font-bold text-white px-4">
                   {section.title}
                 </h2>
 
                 {section.details.text && (
                   <div
-                    className="pr-4 mb-4 text-sm text-white"
+                    className="px-4 mb-4 text-sm text-white"
                     dangerouslySetInnerHTML={{ __html: section.details.text }}
                   />
                 )}
@@ -55,7 +55,7 @@ const Section2 = () => {
                     href={section.details.cta_link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block py-2 mb-16 font-bold text-red-500 transition-colors rounded-md "
+                    className="inline-block py-2 mb-16 font-bold text-red-500 transition-colors rounded-md px-4"
                   >
                     {section.details.cta_text || "Read More"}
                   </a>

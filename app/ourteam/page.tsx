@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from "react";
+import ToTopButton from "../components/totopbutton";
 
 const OurTeam = () => {
     const [popup, setOpenpop] = useState(false);
@@ -7,6 +8,11 @@ const OurTeam = () => {
     return (
         <div className="w-full h-full bg-black pb-52">
             <div className="container w-full h-full px-0 mx-auto">
+                <div className="flex w-full h-auto justify-end pr-10">
+                    <div className=" fixed bottom-6  pb-10 "  >
+                        <ToTopButton />
+                    </div>
+                </div>
                 <div className="relative w-full md:h-[80lvh] h-lvh">
                     <img
                         src="./ourteam.jpg"

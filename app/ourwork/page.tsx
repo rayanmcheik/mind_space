@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from "react";
 import Card from "./Card"; // Import the card component
+import ToTopButton from "../components/totopbutton";
 
 
 const categories = ["All Categories", "Tech", "News", "Business", "Lifestyle"];
@@ -51,39 +52,43 @@ const OurWork = () => {
       : cardsData.filter((card) => card.category === selectedCat);
 
   return (
-        <div className="w-full h-full bg-black pb-52">
-            <div className="container w-full h-full px-0 mx-auto">
-      <h1 className="text-center text-4xl font-bold mb-6">Categories</h1>
+    <div className="w-full h-full bg-black pb-[40lvh]">
+      <div className="container w-full h-full px-0 mx-auto ">
+        <div className="flex w-full h-auto justify-end pr-10">
+          <div className=" fixed bottom-6  pb-10 "  >
+            <ToTopButton />
+          </div>
+        </div>
+        <h1 className="text-center text-4xl font-bold mb-6">Categories</h1>
 
-      <div className="w-full flex flex-wrap justify-center gap-10 text-xl mb-10">
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setSelectedCat(cat)}
-            className={`relative pb-2 transition text-white cursor-pointer ${
-              selectedCat === cat ? "font-bold" : "opacity-70"
-            }`}
-          >
-            {cat}
-            {selectedCat === cat && (
-              <span className="absolute left-0 bottom-0 w-full h-[3px] bg-cyan-500 rounded"></span>
-            )}
-          </button>
-        ))}
-      </div>
+        <div className="w-full flex flex-wrap justify-center md:gap-10 text-xl mb-10 md:pt-0 pt-24 gap-14">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setSelectedCat(cat)}
+              className={`relative pb-2 transition text-white cursor-pointer ${selectedCat === cat ? "font-bold" : "opacity-70"
+                }`}
+            >
+              {cat}
+              {selectedCat === cat && (
+                <span className="absolute left-0 bottom-0 w-full h-[3px] bg-cyan-500 rounded"></span>
+              )}
+            </button>
+          ))}
+        </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 w-[90%] mx-auto">
-        {filteredCards.map((card) => (
-          <Card
-            key={card.id}
-            title={card.title}
-            description={card.description}
-            img={card.img}
-          />
-        ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 w-[90%] mx-auto">
+          {filteredCards.map((card) => (
+            <Card
+              key={card.id}
+              title={card.title}
+              description={card.description}
+              img={card.img}
+            />
+          ))}
+        </div>
       </div>
     </div>
-        </div>
   );
 };
 

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { CiAirportSign1 } from 'react-icons/ci';
 import gsap from 'gsap';
 import AnimatedCircle from './AnimatedCircle';
+import ToTopButton from './totopbutton';
 
 const Section1 = () => {
 
@@ -20,11 +21,15 @@ const Section1 = () => {
 
   return (
     <div className="w-full h-auto bg-black ">
-      <div className="fixed top-1/2 -translate-y-1/2 w-2 h-[170px] bg-gray-300 rounded-md overflow-hidden left-10">
-          <div className="w-full transition-all duration-200 bg-red-500 rounded-md border-[0.2px] border-gray-400" style={{ height: `${scrollHeight}px` }} ></div>
+      <div className="md:fixed top-1/2 -translate-y-1/2 w-2 h-[170px] bg-gray-300 rounded-md overflow-hidden left-10">
+          <div className="hidden md:relative w-full transition-all duration-200 bg-red-500 rounded-md border-[0.2px] border-gray-400" style={{ height: `${scrollHeight}px` }} ></div>
         </div>
       <div className='container w-full h-auto px-0 mx-auto md:pt-10 md:pb-12 pt-52 '>
-
+                <div className="flex w-full h-auto justify-end pr-10">
+                    <div className=" fixed bottom-6  pb-10 "  >
+                        <ToTopButton />
+                    </div>
+                </div>
         
 
         <div className="relative px-5 py-4 text-center md:py-4 md:mt-0 -mt-52 md:px-0">

@@ -40,17 +40,22 @@ const Contact = () => {
     };
 
     return (
-        <div className="w-full min-h-screen bg-black md:pb-20 pb-[60lvh]">
-            <ToTopButton />
+        <div className="w-full  bg-black  pb-[40lvh]">
 
-            <div className="container w-full px-4 pt-28 mx-auto md:px-0 md:pt-32 md:pb-52">
+
+            <div className="container w-full px-4 pt-28 mx-auto md:px-0 md:pt-32 ">
+                <div className="flex w-full h-auto justify-end pr-10">
+                    <div className=" fixed bottom-6  pb-10 "  >
+                        <ToTopButton />
+                    </div>
+                </div>
                 <div className="flex flex-col items-center justify-center relative">
 
                     <div className="flex justify-center w-full mt-20 md:mb-0">
                         <AnimatedCirclecontact />
                     </div>
 
-                    <div className="absolute top-20 md:top-auto md:relative w-full max-w-lg md:max-w-3xl mx-auto p-6 md:p-10 border shadow-xl backdrop-blur-lg border-cyan-500 rounded-2xl">
+                    <div className="absolute top-20 md:top-auto md:absolute w-full max-w-lg md:max-w-3xl mx-auto p-6 md:p-10 border shadow-xl backdrop-blur-lg border-cyan-500 rounded-2xl">
                         <h1 className="mb-6 text-3xl md:text-4xl font-bold text-center text-white">
                             Contact Us
                         </h1>

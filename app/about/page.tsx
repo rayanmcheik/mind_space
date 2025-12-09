@@ -26,9 +26,14 @@ export default function AboutPage() {
     }, []);
 
     return (
-        <div className="w-full h-full bg-black pb-[20%]">
-            <ToTopButton></ToTopButton>
+        <div className="w-full h-full bg-black pb-[50lvh]">
+
             <div className="container w-full h-full px-0 pt-20 pb-12 mx-auto md:pt-20 md:pb-52">
+                <div className="flex w-full h-auto justify-end pr-10">
+                    <div className=" fixed bottom-6  pb-10 "  >
+                        <ToTopButton />
+                    </div>
+                </div>
                 <div className="w-full h-[400px]">
                     <Swiper
                         slidesPerView={3}
@@ -38,7 +43,7 @@ export default function AboutPage() {
                                 slidesPerView: 1,
 
                             },
-                            
+
                             620: {
                                 slidesPerView: 1,
                             },
