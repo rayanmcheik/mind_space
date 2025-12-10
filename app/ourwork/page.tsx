@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Card from "./Card";
 import ToTopButton from "../components/totopbutton";
 import Section from "./section";
+import Section2 from "./Section2";
 
 interface AccordionProps {
   question: string;
@@ -150,6 +151,7 @@ const OurWork = () => {
           </div>
         </div>
         <Section />
+        <Section2 />
       </div>
       
     </div>
