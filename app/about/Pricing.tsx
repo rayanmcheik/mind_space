@@ -6,7 +6,7 @@ const Pricing = () => {
 
     return (
         <div className="w-full py-20 mt-20 bg-black">
-            <div className="max-w-6xl px-6 mx-auto">
+            <div className="px-6 mx-auto ">
                 <h1 className="mb-4 text-4xl font-bold text-center text-white md:text-5xl">
                     Pricing that grows with you
                 </h1>
