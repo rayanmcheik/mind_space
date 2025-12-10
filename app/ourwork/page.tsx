@@ -1,8 +1,14 @@
 'use client';
 import React, { useState } from "react";
-import Card from "./Card"; // Import the card component
+import Card from "./Card";
 import ToTopButton from "../components/totopbutton";
 
+interface AccordionProps {
+  question: string;
+  answer: string;
+  isOpen: boolean;
+  onClick: () => void;
+}
 
 const categories = ["All Categories", "Tech", "News", "Business", "Lifestyle"];
 
@@ -43,8 +49,47 @@ const cardsData = [
     img: "./tech2.jpeg",
   },
 ];
+
+const faqData = [
+  {
+    question: "What services do you offer?",
+    answer: "We provide tech solutions, design, business strategies, and more.",
+  },
+  {
+    question: "How long does a project take?",
+    answer: "Most tech projects take between 1–4 weeks depending on size.",
+  },
+  {
+    question: "Can I request custom features?",
+    answer: "Yes, we deliver custom features tailored to your needs.",
+  },
+];
+
+const AccordionItem = ({ question, answer, isOpen, onClick }: AccordionProps) => {
+  return (
+    <div className="py-4 border-b border-gray-600 ">
+      <button
+        onClick={onClick}
+        className="flex items-center justify-between w-full text-xl text-left text-white cursor-pointer"
+      >
+        {question}
+        <span className="text-cyan-400">{isOpen ? "-" : "+"}</span>
+      </button>
+
+      <div
+        className={`transition-all duration-300 overflow-hidden ${
+          isOpen ? "max-h-40 mt-2" : "max-h-0"
+        }`}
+      >
+        <p className="text-gray-300">{answer}</p>
+      </div>
+    </div>
+  );
+};
+
 const OurWork = () => {
   const [selectedCat, setSelectedCat] = useState("All Categories");
+  const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
   const filteredCards =
     selectedCat === "All Categories"
@@ -53,22 +98,23 @@ const OurWork = () => {
 
   return (
     <div className="w-full h-full bg-black pb-[40lvh]">
-      <div className="container w-full h-full px-0 mx-auto ">
-        <div className="flex w-full h-auto justify-end pr-10">
-          <div className=" fixed bottom-6  pb-10 "  >
+      <div className="container w-full h-full px-0 mx-auto">
+        <div className="flex justify-end w-full h-auto pr-10">
+          <div className="fixed pb-10 bottom-6">
             <ToTopButton />
-             
           </div>
         </div>
-        <h1 className="text-center text-4xl font-bold mb-6">Categories</h1>
 
-        <div className="w-full flex flex-wrap justify-center md:gap-10 text-xl mb-10 md:pt-0 pt-24 gap-14">
+        <h1 className="mb-6 text-4xl font-bold text-center text-white">Categories</h1>
+
+        <div className="flex flex-wrap justify-center w-full pt-24 mb-10 text-xl text-white md:gap-10 md:pt-0 gap-14">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setSelectedCat(cat)}
-              className={`relative pb-2 transition text-white cursor-pointer ${selectedCat === cat ? "font-bold" : "opacity-70"
-                }`}
+              className={`relative pb-2 transition cursor-pointer ${
+                selectedCat === cat ? "font-bold" : "opacity-70"
+              }`}
             >
               {cat}
               {selectedCat === cat && (
@@ -87,6 +133,22 @@ const OurWork = () => {
               img={card.img}
             />
           ))}
+        </div>
+
+        <div className="w-[90%] mx-auto mt-20 text-white">
+          <h2 className="mb-6 text-3xl font-bold text-center">FAQ</h2>
+
+          <div className="p-6 bg-gray-900 shadow-lg rounded-2xl">
+            {faqData.map((item, index) => (
+              <AccordionItem
+                key={index}
+                question={item.question}
+                answer={item.answer}
+                isOpen={openFAQ === index}
+                onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>

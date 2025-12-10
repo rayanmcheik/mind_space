@@ -8,16 +8,16 @@ import ToTopButton from '../components/totopbutton';
 
 const OurTeam = () => {
     return (
-        <div className="w-full h-auto bg-black pb-[40lvh]">
-            <div className="w-full h-auto px-5 md:pt-32 pb-12 mx-auto container pt-20">
-                 <div className="flex w-full h-auto justify-end pr-10">
-                    <div className=" fixed bottom-6  pb-10 "  >
+        <div className="w-full h-auto bg-black pb-[60lvh]">
+            <div className="container w-full h-auto px-5 pt-20 pb-12 mx-auto md:pt-32">
+                 <div className="flex justify-end w-full h-auto pr-10">
+                    <div className="fixed pb-10 bottom-6"  >
                         <ToTopButton />
                     </div>
                 </div>
                 <div className="flex flex-col">
                     <div>
-                        <h1 className="text-2xl font-semibold text-center pb-7 md:text-5xl md:pb-10 font-poppins text-white">
+                        <h1 className="text-2xl font-semibold text-center text-white pb-7 md:text-5xl md:pb-10 font-poppins">
                             Meet Our Team
                         </h1>
                     </div>
@@ -26,7 +26,7 @@ const OurTeam = () => {
                         spaceBetween={10}
                         slidesPerView={2.6}
 
-                        className="w-full px-4 md:mt-0 mt-20 pl-0"
+                        className="w-full px-4 pl-0 mt-20 md:mt-0"
                         breakpoints={{
                             0: {
                                 slidesPerView: 1,
