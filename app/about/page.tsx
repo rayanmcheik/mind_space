@@ -95,6 +95,35 @@ export default function AboutPage() {
                     </Swiper>
                 </div>
                 <Pricing />
+                <div className="flex flex-col items-center w-full gap-8 pt-20 md:flex-row md:items-start">
+                    <div className="md:w-1/2">
+                        <h2 className="pt-10 pb-16 mb-4 text-5xl font-bold text-white">Big Data Entrance</h2>
+                        <p className="text-2xl text-cyan-500">
+                            Explore the power of big data with our cutting-edge tools and analytics.
+                            Gain insights, optimize decisions, and drive growth with ease.
+                        </p>
+                        <div className="flex flex-row gap-3">
+                        <button
+                            className="px-6 py-3 mt-8 text-white transition rounded-lg shadow-lg cursor-pointer bg-cyan-500 hover:bg-red-500"
+                        >
+                            Get started
+                        </button>
+                        <button
+                            className="px-6 py-3 mt-8 text-white transition border-2 rounded-lg shadow-lg cursor-pointer border-amber-50 hover:bg-red-500"
+                        >
+                            Learn More
+                        </button>
+                        </div>
+                    </div>
+
+                    <div className="md:w-1/2 ">
+                        <img
+                            src="/work1.jpg"
+                            alt="Big Data Illustration"
+                            className="object-cover w-full h-[600px] rounded-lg shadow-lg"
+                        />
+                    </div>
+                </div>
             </div>
         </div>
     );

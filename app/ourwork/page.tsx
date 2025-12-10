@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Card from "./Card";
 import ToTopButton from "../components/totopbutton";
+import Section from "./section";
 
 interface AccordionProps {
   question: string;
@@ -77,9 +78,8 @@ const AccordionItem = ({ question, answer, isOpen, onClick }: AccordionProps) =>
       </button>
 
       <div
-        className={`transition-all duration-300 overflow-hidden ${
-          isOpen ? "max-h-40 mt-2" : "max-h-0"
-        }`}
+        className={`transition-all duration-300 overflow-hidden ${isOpen ? "max-h-40 mt-2" : "max-h-0"
+          }`}
       >
         <p className="text-gray-300">{answer}</p>
       </div>
@@ -112,9 +112,8 @@ const OurWork = () => {
             <button
               key={cat}
               onClick={() => setSelectedCat(cat)}
-              className={`relative pb-2 transition cursor-pointer ${
-                selectedCat === cat ? "font-bold" : "opacity-70"
-              }`}
+              className={`relative pb-2 transition cursor-pointer ${selectedCat === cat ? "font-bold" : "opacity-70"
+                }`}
             >
               {cat}
               {selectedCat === cat && (
@@ -150,7 +149,9 @@ const OurWork = () => {
             ))}
           </div>
         </div>
+        <Section />
       </div>
+      
     </div>
   );
 };

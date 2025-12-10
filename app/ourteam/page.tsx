@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import Card from './Card';
 import ToTopButton from '../components/totopbutton';
+import Section from './Section';
 
 const OurTeam = () => {
     return (
@@ -107,6 +108,7 @@ const OurTeam = () => {
                     </Swiper>
 
                 </div>
+                <Section />
             </div>
         </div>
     );

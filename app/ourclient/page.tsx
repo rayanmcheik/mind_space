@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from "react";
+import Section from "./Section";
 
 const OurClient = () => {
     const [popup, setOpenpop] = useState(false);
@@ -45,6 +46,10 @@ const OurClient = () => {
                         </div>
                     </div>
                 )}
+
+
+                <Section />
+
             </div>
         </div>
     );
