@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import ToTopButton from "../components/totopbutton";
+import Pricing from "./Pricing";
 
 interface Project {
     id: number;
@@ -29,8 +30,8 @@ export default function AboutPage() {
         <div className="w-full h-full bg-black pb-[50lvh]">
 
             <div className="container w-full h-full px-0 pt-20 pb-12 mx-auto md:pt-20 md:pb-52">
-                <div className="flex w-full h-auto justify-end pr-10">
-                    <div className=" fixed bottom-6  pb-10 "  >
+                <div className="flex justify-end w-full h-auto pr-10">
+                    <div className="fixed pb-10 bottom-6"  >
                         <ToTopButton />
                     </div>
                 </div>
@@ -93,6 +94,7 @@ export default function AboutPage() {
                         <div className="swiper-button-next text-red-500!"></div>
                     </Swiper>
                 </div>
+                <Pricing />
             </div>
         </div>
     );
