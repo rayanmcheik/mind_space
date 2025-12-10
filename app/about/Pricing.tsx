@@ -15,32 +15,38 @@ const Pricing = () => {
                     Choose an affordable plan that’s packed with the best features for
                     engaging your audience, creating customer loyalty, and driving sales.
                 </p>
-
-                <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-                    <CardPrice
-                        title="Starter"
-                        price="19"
-                        highlighted={activeCard === "Starter"}
-                        onClick={() => setActiveCard("Starter")}
-                    />
-                    <CardPrice
-                        title="Growth"
-                        price="49"
-                        highlighted={activeCard === "Growth"}
-                        onClick={() => setActiveCard("Growth")}
-                    />
-                    <CardPrice
-                        title="Scale"
-                        price="99"
-                        highlighted={activeCard === "Scale"}
-                        onClick={() => setActiveCard("Scale")}
-                    />
-                </div>
-
+                
 
                 <div className="mt-16 overflow-x-auto">
                     <table className="w-full text-left border-collapse">
                         <tbody>
+                            <tr className="">
+                                <td className="w-1/4 py-3"></td>
+                                <td className="px-3 text-center">
+                                    <CardPrice
+                                        title="Starter"
+                                        price="19"
+                                        highlighted={activeCard === "Starter"}
+                                        onClick={() => setActiveCard("Starter")}
+                                    />
+                                </td>
+                                <td className="px-3 text-center ">
+                                    <CardPrice
+                                        title="Growth"
+                                        price="49"
+                                        highlighted={activeCard === "Growth"}
+                                        onClick={() => setActiveCard("Growth")}
+                                    />
+                                </td>
+                                <td className="px-3 text-center ">
+                                    <CardPrice
+                                        title="Scale"
+                                        price="99"
+                                        highlighted={activeCard === "Scale"}
+                                        onClick={() => setActiveCard("Scale")}
+                                    />
+                                </td>
+                            </tr>
                             <tr>
                                 <td className="py-4 font-semibold text-cyan-500" colSpan={4}>
                                     Features
@@ -48,7 +54,7 @@ const Pricing = () => {
                             </tr>
 
                             <tr className="border-t text-cyan-500">
-                                <td className="py-3">Edge content delivery</td>
+                                <td className="w-1/4 py-3">Edge content delivery</td>
                                 <td className="text-center">✔</td>
                                 <td className="text-center">✔</td>
                                 <td className="text-center">✔</td>
