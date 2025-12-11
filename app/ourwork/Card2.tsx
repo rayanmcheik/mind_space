@@ -14,9 +14,9 @@ const Card2: React.FC<Card2Props> = ({ image, description, title }) => {
                 <img src={image} className="object-cover " />
             </div>
             <div className="w-full pr-3">
-                <p className="text-3xl text-white">
+                <p className="md:text-3xl text-white text-2xl">
                     {title}.{" "}
-                    <span className="text-2xl text-gray-500">{description}</span>
+                    <span className="md:text-2xl text-gray-500 text-xl">{description}</span>
                 </p>
             </div>
 

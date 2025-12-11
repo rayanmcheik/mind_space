@@ -3,9 +3,9 @@ import Card2 from './Card2'
 
 const Section2 = () => {
   return (
-    <div className='flex flex-col w-full mt-20 bg-black'>
-        <div className="pb-10 text-5xl font-bold text-white">Our Value</div>
-    <div className="pb-10 text-3xl text-gray-600">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis.
+    <div className='flex flex-col w-full mt-20 bg-black md:items-start md:justify-start items-center justify-center'>
+        <div className="pb-10 md:text-5xl font-bold text-white text-3xl">Our Value</div>
+    <div className="pb-10 md:text-3xl text-gray-600 text-xl px-3 text-center md:text-left">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis.
 </div>
     <div className="grid w-full grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
        

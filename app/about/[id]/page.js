@@ -23,7 +23,7 @@ export default function AboutDetails() {
             const arr = data.data;
             const dataToUse = arr.find((mov) => String(mov.id) === String(id));
             const projectIndex = arr.findIndex((mov) => String(mov.id) === String(id));
-            setProject(dataToUse);
+            setProject({ ...dataToUse, totalProjects: arr.length });
             setIndex(projectIndex);
         }
         load();
@@ -41,10 +41,11 @@ export default function AboutDetails() {
         <div className="w-full h-full bg-black">
             <div className="container w-full h-full px-0 pt-20 pb-12 mx-auto md:pt-20 md:pb-52">
                 <div className="flex w-full h-auto justify-end pr-10">
-                    <div className=" fixed bottom-6  pb-10 "  >
+                    <div className="fixed bottom-6 pb-10">
                         <ToTopButton />
                     </div>
                 </div>
+
                 <div className="flex flex-col items-center justify-center text-white text-lg gap-y-4">
 
                     <h1 className="mb-4 text-3xl font-bold">{project.title}</h1>
@@ -65,17 +66,15 @@ export default function AboutDetails() {
                         <p className="px-4 md:px-0"><span className="font-bold">Directors:</span> {project.directors}</p>
                     )}
 
-
-
                     {project.agency && (
                         <p className="px-4 md:px-0"><span className="font-bold">Agency:</span> {project.agency}</p>
                     )}
 
                     {project.vimeo_id && (
-                        <div className="w-full flex justify-start md:justify-center ">
+                        <div className="w-full flex justify-start md:justify-center">
                             <iframe
                                 src={`https://player.vimeo.com/video/${project.vimeo_id}`}
-                                className="w-full h-[80vh] md:h-[50vh] rounded-lg px-4 md:px-0 "
+                                className="w-full h-[80vh] md:h-[50vh] rounded-lg px-4 md:px-0"
                                 frameBorder="0"
                                 allow="autoplay; fullscreen"
                                 allowFullScreen
@@ -83,14 +82,43 @@ export default function AboutDetails() {
                         </div>
                     )}
 
-
                     {project.text && (
                         <p className="px-4 md:px-0 -mt-20 md:mt-0">{project.text}</p>
                     )}
+
+                    <div className="flex items-end justify-end w-full px-4 md:px-0 mt-10 gap-3">
+                        {index > 0 ? (
+                            <a
+                                href={`/about/${project.id - 1}`}
+                                className="text-white  hover:text-gray-300"
+                            >
+                                Previous
+                            </a>
+                        ) : (
+                            <span className="text-gray-500">Previous</span>
+                        )}
+
+                        <a
+                            href=""
+                            className="text-gray-500 font-semibold "
+                        >
+                           | Our Work |
+                        </a>
+
+                        {index < project.totalProjects - 1 ? (
+                            <a
+                                href={`/about/${project.id + 1}`}
+                                className="text-white  hover:text-gray-300"
+                            >
+                                Next
+                            </a>
+                        ) : (
+                            <span className="text-gray-500">Next</span>
+                        )}
+                    </div>
+
                 </div>
-
             </div>
-
         </div>
     );
 }
